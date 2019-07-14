@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- 注入UserDao -->
+    <!--<bean id="UserDao" class="com.chuyu.dao.lmpl.UserDaoImpl">
+        &lt;!&ndash; 通过构造方法注入属性 &ndash;&gt;
+        <constructor-arg name="name" value="test"/>
+        <constructor-arg name="age" value="18"/>
+        <constructor-arg name="birthday" ref="time"/>
+    </bean>-->
+    <!-- 使用set方法注入-->
+    <bean id="userDao" class="com.chuyu.dao.lmpl.UserDaoImpl">
+       <property name="myarr" >
+           <array>
+               <value>aaa</value>
+               <value>bbb</value>
+               <value>ccc</value>
+           </array>
+       </property>
+        <property name="mylist" >
+            <array>
+                <value>aaa</value>
+                <value>bbb</value>
+                <value>ccc</value>
+            </array>
+        </property>
+        <property name="myset" >
+            <array>
+                <value>aaa</value>
+                <value>bbb</value>
+                <value>ccc</value>
+            </array>
+        </property>
+        <property name="mymap" >
+          <map>
+              <entry key="baimao" value="heimao"></entry>
+              <entry key="baaao" value="hoooo"></entry>
+              <entry key="ccccco" value="tttoo"></entry>
+          </map>
+        </property>
+        <property name="mypro">
+            <props>
+                <prop key="haha">ooo</prop>
+                <prop key="yyy">oyyy</prop>
+                <prop key="mmm">okkyy</prop>
+            </props>
+        </property>
+    </bean>
+    <!-- 配置一个日期对象 -->
+    <bean id="time"  class="java.util.Date" >
+
+    </bean>
+</beans>
